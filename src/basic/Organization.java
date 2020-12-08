@@ -1,7 +1,11 @@
 package basic;
+import java.util.Scanner;
+
 
 public class Organization {
 
+	Scanner sc = new Scanner(System.in);
+	
 	private int Org_Id;
 	private String Org_Name;
 	private String Org_Description;
@@ -97,11 +101,45 @@ public class Organization {
 	}
 	
 	public void addDepartment(Department Dep ) {
-		Department.deptId= Dep.deptId;
-		Department.deptName=Dep.deptName;
-		Department.deptDescription=Dep.deptDescription;
-		Department.deptManagerId=Dep.deptManagerId;
-		Department.deptManager=Dep.deptManager;
+		System.out.println("Please enter department"+Dep.toString()+" details");
+		System.out.println("Id");
+		Dep.deptId = sc.nextInt();
+		System.out.println("Name");
+		Dep.deptName=sc.next();
+		System.out.println("Description");
+		Dep.deptDescription = sc.next();
+		System.out.println(" Manager Id");
+		Dep.deptManagerId=sc.nextInt();
+		System.out.println("Manager name");
+		Dep.deptManager=sc.next();
+		
 	}
-	
+	public void getAllDepartmentDetailses(Department Dep) {
+		System.out.println("Department Id " +Dep.deptId);
+		System.out.println("Department Name " +Dep.deptName);
+		System.out.println("Department Description" +Dep.deptDescription);
+		System.out.println("Manager is "+ Dep.deptManager+" with Id "+ Dep.deptManagerId);
+		System.out.println();
+	}
+	public void getOrganisationDetails() {
+		System.out.println("Please enter organisation details");
+		System.out.println(" Organisation Id");
+		Org_Id = sc.nextInt();
+		System.out.println(" Organisation name");		  
+		Org_Name = sc.next();
+		System.out.println(" Description");
+		Org_Description=sc.next();
+		System.out.println(" Location");
+		Org_Location =sc.next();
+		System.out.println(" Address");
+		Org_Address=sc.next();
+		System.out.println(" Owner");
+		Org_Owner = sc.nextLine();
+		System.out.println(" Turn over");
+		Org_turnover =sc.nextDouble();
+		System.out.println(" Cost of Products");
+		Org_Cost_Products=sc.nextDouble();
+		System.out.println(" Expense");
+		Org_Expense =sc.nextDouble();
+	}
 }

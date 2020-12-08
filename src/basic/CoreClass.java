@@ -4,31 +4,46 @@ public class CoreClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("Please enter organization details");
 		Organization Org = new Organization();
+		Org.getOrganisationDetails();
 		Employee emp = new Employee();
 		
-		Department SalesDept = new Department();
-		SalesDept.deptId=101;
-		SalesDept.deptName="Sales";
-		SalesDept.deptDescription="Department of Sales";
-		SalesDept.deptManagerId=110;
-		SalesDept.deptManager="Mark Owen";
-		Org.addDepartment(SalesDept);
-		
-		SalesDept.getAllDepartmentDetails();
-		
-		Department HrDept = new Department();
-		HrDept.deptId=201;
-		HrDept.deptName="HR";
-		HrDept.deptDescription="Department of Human Resource";
-		HrDept.deptManagerId=210;
-		HrDept.deptManager="George Smith";
-		Org.addDepartment(HrDept);
-		
-		HrDept.getAllDepartmentDetails();
+		System.out.println("Please enter department details");
+		Department Depts[] = new Department[5];
+		for(int i=1;i<=5;i++)
+		{
+			Depts[i] = new Department();
+			Org.addDepartment(Depts[i]);
+			Org.getAllDepartmentDetailses(Depts[i]);		
+		}
+		System.out.println("Please enter employee details");
 		emp.AddEmployee();
 		emp.DisplayEmployeeDetails();
 		
+		System.out.println("Please enter student details");
+		Student stud = new Student();
+		
+		stud.addStudentDetails();
+		stud.displayStudentDetails();
+		
+		System.out.println("Please enter shop details");
+		Shop sh= new Shop();
+		sh.addShopDetails();
+		sh.displayShopDetails();
+		
+		System.out.println("Please enter  area of geometric shapes ");
+		Area square= new Area();
+		square.calculateArea(3.5);
+		square.displayArea();
+		
+		Area rectangle = new Area();
+		rectangle.calculateArea(5, 3);
+		rectangle.displayArea();
+		
+		Area triangle= new Area();
+		triangle.calculateArea(2.5, 4, true);
+		triangle.displayArea();
 		
 	}
 

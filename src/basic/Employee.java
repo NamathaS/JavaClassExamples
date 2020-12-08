@@ -56,7 +56,6 @@ public class Employee {
     public void setEmployeeLastName(String lastname) {
     	EmpLastName= lastname;
     }
-    
     public void setEmployeeDesignation(String Designation) {
     	EmpDesignation=Designation;
     }
